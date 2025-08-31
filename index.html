@@ -111,7 +111,7 @@
             <a href="#buy" class="px-6 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition">Buy EMC</a>
             <a href="whitepaper.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition">Download Whitepaper</a>
           </div>
-          <div class="mt-6 text-sm text-parchment/70">Contract: <code id="contractText" class="text-parchment">0x700Ad9C0b1EdbB2b04A9F8Cadca95a255f7a313E</code></div>
+          <div class="mt-6 text-sm text-parchment/70">Contract: <code class="contract-address text-parchment"></code></div>
         </div>
         <div class="flex justify-center lg:justify-end">
           <div class="p-3 rounded-3xl bg-white/5 gold-ring shadow-xl">
@@ -167,9 +167,9 @@
             <dt class="font-semibold">Symbol</dt><dd>EMC</dd>
             <dt class="font-semibold">Network</dt><dd>BNB Smart Chain (BEP-20)</dd>
             <dt class="font-semibold">Decimals</dt><dd>18</dd>
-            <dt class="font-semibold">Total Supply</dt><dd>1,000,000,000 EMC</dd>
-            <dt class="font-semibold">Mintable</dt><dd>Yes (Owner only)</dd>
-            <dt class="font-semibold">Burnable</dt><dd>Yes</dd>
+            <dt class="font-semibold">Total Supply</dt><dd>10,000,000,000 EMC</dd>
+            <dt class="font-semibold">Mintable</dt><dd>No (fixed supply)</dd>
+            <dt class="font-semibold">Burnable</dt><dd>No</dd>
           </dl>
         </div>
         <div class="p-6 rounded-2xl bg-white/5 gold-ring">
@@ -180,18 +180,17 @@
             <li class="flex items-center justify-between"><span>Team</span><span class="font-semibold text-gold-400">15%</span></li>
             <li class="flex items-center justify-between"><span>Marketing</span><span class="font-semibold text-gold-400">15%</span></li>
           </ul>
-          <p class="mt-3 text-xs text-parchment/60">Note: Movements and minting are transparent on-chain.</p>
+          <p class="mt-3 text-xs text-parchment/60">Note: All transfers are transparent on-chain.</p>
         </div>
       </div>
 
       <div class="mt-6 p-6 rounded-2xl bg-white/5 gold-ring">
-        <h3 class="font-semibold">Smart Contract Features</h3>
+        <h3 class="font-semibold">Smart Contract Facts</h3>
         <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-parchment/85">
-          <li>✅ Fully verified BEP-20 token</li>
-          <li>🔐 Owner-controlled minting for reward expansion</li>
-          <li>♻️ Burn function to control inflation</li>
-          <li>💸 Standard transfer & approve functions</li>
-          <li>🛡️ No backdoors or hidden supply mechanics</li>
+          <li>✅ Fixed-supply BEP-20 (10,000,000,000 EMC minted at deploy)</li>
+          <li>💸 Standard transfer & approve (no fees)</li>
+          <li>🔒 No owner-only functions, no mint/burn after deploy</li>
+          <li>🛡️ No blacklist/whitelist, no pause</li>
         </ul>
       </div>
     </div>
@@ -269,11 +268,11 @@
           <div>
             <h3 class="text-xl font-bold">Buy Emirate Coin (EMC)</h3>
             <p class="mt-2 text-parchment/80">Add the contract to your wallet and trade on PancakeSwap once liquidity goes live.</p>
-            <div class="mt-3 text-sm text-parchment/70">Contract: <code>0x700Ad9C0b1EdbB2b04A9F8Cadca95a255f7a313E</code></div>
+            <div class="mt-3 text-sm text-parchment/70">Contract: <code class="contract-address"></code></div>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="#" class="px-5 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition" aria-label="Open PancakeSwap (placeholder)">Trade on PancakeSwap</a>
-            <a href="https://bscscan.com/token/0x700Ad9C0b1EdbB2b04A9F8Cadca95a255f7a313E" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition">View on BscScan</a>
+            <a id="pcsLink" href="#" class="px-5 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition" aria-label="Open PancakeSwap">Trade on PancakeSwap</a>
+            <a id="bscscanLink" href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition">View on BscScan</a>
           </div>
         </div>
       </div>
@@ -299,7 +298,7 @@
           <h3 class="font-semibold">Official Details</h3>
           <dl class="mt-3 grid grid-cols-3 gap-3 text-sm text-parchment/85">
             <dt class="col-span-1 text-parchment/60">Contract</dt>
-            <dd class="col-span-2 break-all">0x700Ad9C0b1EdbB2b04A9F8Cadca95a255f7a313E</dd>
+            <dd class="col-span-2 break-all contract-address"></dd>
             <dt class="col-span-1 text-parchment/60">Network</dt>
             <dd class="col-span-2">BNB Smart Chain</dd>
             <dt class="col-span-1 text-parchment/60">Decimals</dt>
@@ -321,6 +320,9 @@
   </footer>
 
   <script>
+    // === CONSTANTS ===
+    const CONTRACT = '0xD7abd6e3CE9658f7b6E454784FfD31A056223C59';
+
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -329,22 +331,30 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
+    // Fill contract address everywhere
+    document.querySelectorAll('.contract-address').forEach(el => el.textContent = CONTRACT);
+
+    // Links that depend on the contract
+    const bscscanLink = document.getElementById('bscscanLink');
+    if (bscscanLink) bscscanLink.href = `https://bscscan.com/token/${CONTRACT}`;
+
+    const pcsLink = document.getElementById('pcsLink');
+    if (pcsLink) pcsLink.href = `https://pancakeswap.finance/swap?outputCurrency=${CONTRACT}`;
+
     // Copy contract button
-    const contract = '0x700Ad9C0b1EdbB2b04A9F8Cadca95a255f7a313E';
     document.getElementById('copyContract')?.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText(contract);
+        await navigator.clipboard.writeText(CONTRACT);
         const btn = document.getElementById('copyContract');
         const original = btn.textContent;
         btn.textContent = 'Copied!';
         btn.classList.add('bg-white/10');
         setTimeout(()=>{ btn.textContent = original; btn.classList.remove('bg-white/10'); }, 1400);
       } catch (e) {
-        alert('Copy failed. Contract: ' + contract);
+        alert('Copy failed. Contract: ' + CONTRACT);
       }
     });
   </script>
 </body>
 </html>
-
 
