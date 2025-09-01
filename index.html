@@ -1,361 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emirate Coin (EMC) – The Token That Takes You Places</title>
-  <meta name="description" content="Emirate Coin (EMC) is a BEP-20 token on BNB Smart Chain blending travel, rewards, and global freedom. Download the whitepaper and join the community." />
-  <meta property="og:title" content="Emirate Coin (EMC)" />
-  <meta property="og:description" content="The token that takes you places. Travel + reward crypto ecosystem on BNB Smart Chain." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="Emirate coin.png" />
-  <meta name="theme-color" content="#7B1113" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emirate Coin (EMC) – The Token That Takes You Places</title>
+    <meta
+      name="description"
+      content="Emirate Coin (EMC) is a BEP-20 token on BNB Smart Chain blending travel, rewards, and global freedom. Download the whitepaper and join the community."
+    />
+    <meta property="og:title" content="Emirate Coin (EMC)" />
+    <meta
+      property="og:description"
+      content="The token that takes you places. Travel + reward crypto ecosystem on BNB Smart Chain."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Emirate coin.png" />
+    <meta name="theme-color" content="#7B1113" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            maroon: {
-              900: '#5B0A0A',
-              800: '#6B0E0E',
-              700: '#7B1113', // primary brand
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              maroon: {
+                900: "#5B0A0A",
+                800: "#6B0E0E",
+                700: "#7B1113", // primary brand
+              },
+              gold: {
+                400: "#E6C75A",
+                500: "#D4AF37", // accents
+                600: "#B8912D",
+              },
+              parchment: "#F7F3EA",
             },
-            gold: {
-              400: '#E6C75A',
-              500: '#D4AF37', // accents
-              600: '#B8912D',
+            boxShadow: {
+              glow: "0 0 0 2px rgba(212,175,55,0.25), 0 8px 30px rgba(0,0,0,0.25)",
             },
-            parchment: '#F7F3EA',
+            fontFamily: {
+              display: [
+                "ui-sans-serif",
+                "system-ui",
+                "Segoe UI",
+                "Inter",
+                "sans-serif",
+              ],
+            },
           },
-          boxShadow: {
-            glow: '0 0 0 2px rgba(212,175,55,0.25), 0 8px 30px rgba(0,0,0,0.25)'
-          },
-          fontFamily: {
-            display: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Inter', 'sans-serif'],
-          }
-        }
+        },
+      };
+    </script>
+    <style>
+      /* Subtle gold gradient border utility */
+      .gold-ring {
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35),
+          inset 0 0 0 1px rgba(212, 175, 55, 0.15);
       }
-    }
-  </script>
-  <style>
-    /* Subtle gold gradient border utility */
-    .gold-ring { box-shadow: 0 0 0 1px rgba(212,175,55,.35), inset 0 0 0 1px rgba(212,175,55,.15); }
-    /* Smooth anchor scroll */
-    html { scroll-behavior: smooth; }
-  </style>
-</head>
+      /* Smooth anchor scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
 
-<body class="bg-maroon-700 text-white font-display">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-maroon-700/80 border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="#" class="flex items-center gap-3 group">
-          <img src="Emirate coin.png" alt="Emirate Coin Logo" class="h-9 w-9 rounded-xl ring-1 ring-gold-500/30" />
-          <div>
-            <div class="text-lg font-semibold tracking-wide">Emirate Coin</div>
-            <div class="text-[11px] uppercase tracking-[.2em] text-gold-400/90">EMC · BNB Smart Chain</div>
+  <body class="bg-maroon-700 text-white font-display">
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 backdrop-blur bg-maroon-700/80 border-b border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="flex items-center gap-3 group">
+            <img
+              src="Emirate coin.png"
+              alt="Emirate Coin Logo"
+              class="h-9 w-9 rounded-xl ring-1 ring-gold-500/30"
+            />
+            <div>
+              <div class="text-lg font-semibold tracking-wide">
+                Emirate Coin
+              </div>
+              <div
+                class="text-[11px] uppercase tracking-[.2em] text-gold-400/90"
+              >
+                EMC · BNB Smart Chain
+              </div>
+            </div>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#about" class="hover:text-gold-400 transition">About</a>
+            <a href="#tokenomics" class="hover:text-gold-400 transition"
+              >Tokenomics</a
+            >
+            <a href="#roadmap" class="hover:text-gold-400 transition"
+              >Roadmap</a
+            >
+            <a
+              href="whitepaper.pdf"
+              class="hover:text-gold-400 transition"
+              target="_blank"
+              rel="noopener"
+              >Whitepaper</a
+            >
+            <a href="#socials" class="hover:text-gold-400 transition"
+              >Socials</a
+            >
+          </nav>
+          <div class="hidden md:flex items-center gap-3">
+            <a
+              href="#buy"
+              class="px-4 py-2 rounded-xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition"
+              >Buy EMC</a
+            >
+            <button
+              id="copyContract"
+              class="px-4 py-2 rounded-xl border border-gold-500/60 hover:bg-white/5 transition"
+            >
+              Copy Contract
+            </button>
           </div>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm">
-          <a href="#about" class="hover:text-gold-400 transition">About</a>
-          <a href="#tokenomics" class="hover:text-gold-400 transition">Tokenomics</a>
-          <a href="#roadmap" class="hover:text-gold-400 transition">Roadmap</a>
-          <a href="whitepaper.pdf" class="hover:text-gold-400 transition" target="_blank" rel="noopener">Whitepaper</a>
-          <a href="#socials" class="hover:text-gold-400 transition">Socials</a>
+          <button
+            id="menuBtn"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-white/15 hover:bg-white/10"
+            aria-label="Open menu"
+          >
+            <!-- Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <nav class="px-4 py-3 space-y-2 text-sm">
+          <a href="#about" class="block py-2">About</a>
+          <a href="#tokenomics" class="block py-2">Tokenomics</a>
+          <a href="#roadmap" class="block py-2">Roadmap</a>
+          <a
+            href="whitepaper.pdf"
+            target="_blank"
+            rel="noopener"
+            class="block py-2"
+            >Whitepaper</a
+          >
+          <a href="#socials" class="block py-2">Socials</a>
+          <a href="#buy" class="block py-2 text-gold-400">Buy EMC</a>
         </nav>
-        <div class="hidden md:flex items-center gap-3">
-          <a href="#buy" class="px-4 py-2 rounded-xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition">Buy EMC</a>
-          <button id="copyContract" class="px-4 py-2 rounded-xl border border-gold-500/60 hover:bg-white/5 transition">Copy Contract</button>
-        </div>
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg border border-white/15 hover:bg-white/10" aria-label="Open menu">
-          <!-- Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
       </div>
-    </div>
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
-      <nav class="px-4 py-3 space-y-2 text-sm">
-        <a href="#about" class="block py-2">About</a>
-        <a href="#tokenomics" class="block py-2">Tokenomics</a>
-        <a href="#roadmap" class="block py-2">Roadmap</a>
-        <a href="whitepaper.pdf" target="_blank" rel="noopener" class="block py-2">Whitepaper</a>
-        <a href="#socials" class="block py-2">Socials</a>
-        <a href="#buy" class="block py-2 text-gold-400">Buy EMC</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-maroon-700 via-maroon-800 to-maroon-900"></div>
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gold-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl"></div>
-    </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Emirate Coin (EMC)
-          </h1>
-          <p class="mt-3 text-lg text-parchment/90">The token that takes you places.</p>
-          <p class="mt-6 text-base/relaxed text-parchment/80 max-w-2xl">
-            A BEP-20 token on the BNB Smart Chain blending <span class="text-gold-400">travel</span>, <span class="text-gold-400">reward-based utility</span>, and <span class="text-gold-400">global freedom</span>. Built for speed, trust, and real-world integration.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#buy" class="px-6 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition">Buy EMC</a>
-            <a href="whitepaper.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition">Download Whitepaper</a>
-          </div>
-          <div class="mt-6 text-sm text-parchment/70">Contract: <code class="contract-address text-parchment"></code></div>
-        </div>
-        <div class="flex justify-center lg:justify-end">
-          <div class="p-3 rounded-3xl bg-white/5 gold-ring shadow-xl">
-            <img src="Emirate coin.png" alt="Emirate Coin Logo" class="w-60 h-60 object-contain" />
-          </div>
-        </div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-maroon-700 via-maroon-800 to-maroon-900"
+      ></div>
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gold-500/10 blur-3xl"
+        ></div>
+        <div
+          class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl"
+        ></div>
       </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-3 gap-10">
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl font-bold">About Emirate Coin</h2>
-          <p class="mt-4 text-parchment/85 leading-relaxed">
-            <strong>Emirate Coin (EMC)</strong> is a BEP-20 token built on the BNB Smart Chain (BSC) that blends travel, reward-based systems, and global freedom. Inspired by the elegance and prestige of international aviation, EMC is designed to become the digital passport for the next generation of travelers, investors, and crypto users.
-          </p>
-          <p class="mt-4 text-parchment/80 leading-relaxed">
-            Whether you're flying, trading, or exploring the world, EMC is your companion on-chain and off. Our mission is to empower digital travelers and crypto holders with a decentralized token that delivers value through loyalty rewards, real-world integrations, and long-term sustainability.
-          </p>
-        </div>
-        <aside class="lg:col-span-1 space-y-3">
-          <div class="p-5 rounded-2xl bg-white/5 gold-ring">
-            <div class="text-xs uppercase tracking-widest text-parchment/60">Network</div>
-            <div class="mt-1 text-lg font-semibold">BNB Smart Chain (BEP-20)</div>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/5 gold-ring">
-            <div class="text-xs uppercase tracking-widest text-parchment/60">Symbol</div>
-            <div class="mt-1 text-lg font-semibold">EMC</div>
-          </div>
-          <div class="p-5 rounded-2xl bg-white/5 gold-ring">
-            <div class="text-xs uppercase tracking-widest text-parchment/60">Decimals</div>
-            <div class="mt-1 text-lg font-semibold">18</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tokenomics -->
-  <section id="tokenomics" class="py-16 bg-maroon-800/60 border-y border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-6 flex-wrap">
-        <h2 class="text-2xl font-bold">Tokenomics</h2>
-        <a href="whitepaper.pdf" target="_blank" class="text-sm underline underline-offset-4 decoration-gold-500/60 hover:text-gold-400">See full details in Whitepaper</a>
-      </div>
-      <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <dl class="grid grid-cols-2 gap-4 text-parchment/85">
-            <dt class="font-semibold">Token Name</dt><dd>Emirate Coin</dd>
-            <dt class="font-semibold">Symbol</dt><dd>EMC</dd>
-            <dt class="font-semibold">Network</dt><dd>BNB Smart Chain (BEP-20)</dd>
-            <dt class="font-semibold">Decimals</dt><dd>18</dd>
-            <dt class="font-semibold">Total Supply</dt><dd>10,000,000,000 EMC</dd>
-            <dt class="font-semibold">Mintable</dt><dd>No (fixed supply)</dd>
-            <dt class="font-semibold">Burnable</dt><dd>No</dd>
-          </dl>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold mb-4">Allocation (Suggested)</h3>
-          <ul class="space-y-3 text-parchment/85">
-            <li class="flex items-center justify-between"><span>Liquidity Pool</span><span class="font-semibold text-gold-400">50%</span></li>
-            <li class="flex items-center justify-between"><span>Reserve</span><span class="font-semibold text-gold-400">20%</span></li>
-            <li class="flex items-center justify-between"><span>Team</span><span class="font-semibold text-gold-400">15%</span></li>
-            <li class="flex items-center justify-between"><span>Marketing</span><span class="font-semibold text-gold-400">15%</span></li>
-          </ul>
-          <p class="mt-3 text-xs text-parchment/60">Note: All transfers are transparent on-chain.</p>
-        </div>
-      </div>
-
-      <div class="mt-6 p-6 rounded-2xl bg-white/5 gold-ring">
-        <h3 class="font-semibold">Smart Contract Facts</h3>
-        <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-parchment/85">
-          <li>✅ Fixed-supply BEP-20 (10,000,000,000 EMC minted at deploy)</li>
-          <li>💸 Standard transfer & approve (no fees)</li>
-          <li>🔒 No owner-only functions, no mint/burn after deploy</li>
-          <li>🛡️ No blacklist/whitelist, no pause</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Use Cases -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold">Utility & Use Cases</h2>
-      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">Travel Loyalty Program</h3>
-          <p class="mt-2 text-parchment/80">Future integrations with flight, hotel, and travel services to redeem EMC for perks and discounts.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">Community Rewards</h3>
-          <p class="mt-2 text-parchment/80">Airdrops and rewards distributed through campaigns, partnerships, and task-based programs (no Telegram airdrops).</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">Vouchers & Gift Cards</h3>
-          <p class="mt-2 text-parchment/80">Access discounted travel vouchers and gift cards via ecosystem partners.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">Governance Voting</h3>
-          <p class="mt-2 text-parchment/80">Vote on treasury use, partnerships, and roadmap decisions in future dApps.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">NFT Boarding Passes</h3>
-          <p class="mt-2 text-parchment/80">Collectible NFT experiences and access tokens planned for later phases.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Roadmap -->
-  <section id="roadmap" class="py-16 bg-maroon-800/60 border-y border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold">Roadmap</h2>
-      <div class="mt-8 grid lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <div class="text-xs uppercase tracking-widest text-parchment/60">Phase 1 – Genesis</div>
-          <ul class="mt-3 space-y-2 text-parchment/85">
-            <li>✅ Token deployed on BSC</li>
-            <li>✅ Whitepaper creation</li>
-            <li>✅ Branding foundations</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <div class="text-xs uppercase tracking-widest text-parchment/60">Phase 2 – Expansion</div>
-          <ul class="mt-3 space-y-2 text-parchment/85">
-            <li>Token verification on BscScan</li>
-            <li>Logo, website, and social channels live</li>
-            <li>Begin community rewards (non-Telegram)</li>
-            <li>PancakeSwap liquidity pool</li>
-          </ul>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <div class="text-xs uppercase tracking-widest text-parchment/60">Phase 3 – Utility + Scale</div>
-          <ul class="mt-3 space-y-2 text-parchment/85">
-            <li>Launch “Emirate Travel Vault” loyalty system</li>
-            <li>Travel partnerships & influencer programs</li>
-            <li>NFT airline collectibles</li>
-            <li>Governance enablement</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Buy / Contract CTA -->
-  <section id="buy" class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="p-6 md:p-8 rounded-3xl bg-white/5 gold-ring">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h3 class="text-xl font-bold">Buy Emirate Coin (EMC)</h3>
-            <p class="mt-2 text-parchment/80">Add the contract to your wallet and trade on PancakeSwap once liquidity goes live.</p>
-            <div class="mt-3 text-sm text-parchment/70">Contract: <code class="contract-address"></code></div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+              Emirate Coin (EMC)
+            </h1>
+            <p class="mt-3 text-lg text-parchment/90">
+              The token that takes you places.
+            </p>
+            <p class="mt-6 text-base/relaxed text-parchment/80 max-w-2xl">
+              A BEP-20 token on the BNB Smart Chain blending
+              <span class="text-gold-400">travel</span>,
+              <span class="text-gold-400">reward-based utility</span>, and
+              <span class="text-gold-400">global freedom</span>. Built for
+              speed, trust, and real-world integration.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#buy"
+                class="px-6 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition"
+                >Buy EMC</a
+              >
+              <a
+                href="whitepaper.pdf"
+                target="_blank"
+                rel="noopener"
+                class="px-6 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition"
+                >Download Whitepaper</a
+              >
+            </div>
+            <div class="mt-6 text-sm text-parchment/70">
+              Contract: <code class="contract-address text-parchment"></code>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-3">
-            <a id="pcsLink" href="#" class="px-5 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition" aria-label="Open PancakeSwap">Trade on PancakeSwap</a>
-            <a id="bscscanLink" href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition">View on BscScan</a>
+          <div class="flex justify-center lg:justify-end">
+            <div class="p-3 rounded-3xl bg-white/5 gold-ring shadow-xl">
+              <img
+                src="Emirate coin.png"
+                alt="Emirate Coin Logo"
+                class="w-60 h-60 object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Socials -->
-  <section id="socials" class="py-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 class="text-2xl font-bold">Join the Community</h2>
-          <p class="mt-3 text-parchment/80 max-w-xl">Follow our official channels for announcements, reward campaigns, and roadmap progress. No Telegram airdrops will be conducted.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://x.com/emirate_coin" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10">X (Twitter)</a>
-            <a href="https://t.me/emiratecoinofficial" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10">Telegram</a>
-            <a href="https://www.tiktok.com/@emiratecoin" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10">TikTok</a>
-            <a href="https://www.youtube.com/@EmirateCoin" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10">YouTube</a>
-            <a href="whitepaper.pdf" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-gold-500 text-maroon-700 font-semibold shadow-glow">Whitepaper</a>
+    <!-- About -->
+    <section id="about" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-3 gap-10">
+          <div class="lg:col-span-2">
+            <h2 class="text-2xl font-bold">About Emirate Coin</h2>
+            <p class="mt-4 text-parchment/85 leading-relaxed">
+              <strong>Emirate Coin (EMC)</strong> is a BEP-20 token built on the
+              BNB Smart Chain (BSC) that blends travel, reward-based systems,
+              and global freedom. Inspired by the elegance and prestige of
+              international aviation, EMC is designed to become the digital
+              passport for the next generation of travelers, investors, and
+              crypto users.
+            </p>
+            <p class="mt-4 text-parchment/80 leading-relaxed">
+              Whether you're flying, trading, or exploring the world, EMC is
+              your companion on-chain and off. Our mission is to empower digital
+              travelers and crypto holders with a decentralized token that
+              delivers value through loyalty rewards, real-world integrations,
+              and long-term sustainability.
+            </p>
+          </div>
+          <aside class="lg:col-span-1 space-y-3">
+            <div class="p-5 rounded-2xl bg-white/5 gold-ring">
+              <div class="text-xs uppercase tracking-widest text-parchment/60">
+                Network
+              </div>
+              <div class="mt-1 text-lg font-semibold">
+                BNB Smart Chain (BEP-20)
+              </div>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/5 gold-ring">
+              <div class="text-xs uppercase tracking-widest text-parchment/60">
+                Symbol
+              </div>
+              <div class="mt-1 text-lg font-semibold">EMC</div>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/5 gold-ring">
+              <div class="text-xs uppercase tracking-widest text-parchment/60">
+                Decimals
+              </div>
+              <div class="mt-1 text-lg font-semibold">18</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section
+      id="tokenomics"
+      class="py-16 bg-maroon-800/60 border-y border-white/10"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-6 flex-wrap">
+          <h2 class="text-2xl font-bold">Tokenomics</h2>
+          <a
+            href="whitepaper.pdf"
+            target="_blank"
+            class="text-sm underline underline-offset-4 decoration-gold-500/60 hover:text-gold-400"
+            >See full details in Whitepaper</a
+          >
+        </div>
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <dl class="grid grid-cols-2 gap-4 text-parchment/85">
+              <dt class="font-semibold">Token Name</dt>
+              <dd>Emirate Coin</dd>
+              <dt class="font-semibold">Symbol</dt>
+              <dd>EMC</dd>
+              <dt class="font-semibold">Network</dt>
+              <dd>BNB Smart Chain (BEP-20)</dd>
+              <dt class="font-semibold">Decimals</dt>
+              <dd>18</dd>
+              <dt class="font-semibold">Total Supply</dt>
+              <dd>10,000,000,000 EMC</dd>
+              <dt class="font-semibold">Mintable</dt>
+              <dd>No (fixed supply)</dd>
+              <dt class="font-semibold">Burnable</dt>
+              <dd>No</dd>
+            </dl>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold mb-4">Allocation (Suggested)</h3>
+            <ul class="space-y-3 text-parchment/85">
+              <li class="flex items-center justify-between">
+                <span>Airdrop Community</span
+                ><span class="font-semibold text-gold-400">40%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Liquidity Sweep</span
+                ><span class="font-semibold text-gold-400">25%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Development</span
+                ><span class="font-semibold text-gold-400">15%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Reserve</span
+                ><span class="font-semibold text-gold-400">5%</span>
+              </li>
+
+              <li class="flex items-center justify-between">
+                <span>Marketing</span
+                ><span class="font-semibold text-gold-400">10%</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Team</span
+                ><span class="font-semibold text-gold-400">5%</span>
+              </li>
+            </ul>
+
+            <p class="mt-3 text-xs text-parchment/60">
+              Note: All transfers are transparent on-chain.
+            </p>
           </div>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 gold-ring">
-          <h3 class="font-semibold">Official Details</h3>
-          <dl class="mt-3 grid grid-cols-3 gap-3 text-sm text-parchment/85">
-            <dt class="col-span-1 text-parchment/60">Contract</dt>
-            <dd class="col-span-2 break-all contract-address"></dd>
-            <dt class="col-span-1 text-parchment/60">Network</dt>
-            <dd class="col-span-2">BNB Smart Chain</dd>
-            <dt class="col-span-1 text-parchment/60">Decimals</dt>
-            <dd class="col-span-2">18</dd>
-          </dl>
+
+        <div class="mt-6 p-6 rounded-2xl bg-white/5 gold-ring">
+          <h3 class="font-semibold">Smart Contract Facts</h3>
+          <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-parchment/85">
+            <li>
+              ✅ Fixed-supply BEP-20 (10,000,000,000 EMC minted at deploy)
+            </li>
+            <li>💸 Standard transfer & approve (no fees)</li>
+            <li>🔒 No owner-only functions, no mint/burn after deploy</li>
+            <li>🛡️ No blacklist/whitelist, no pause</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-parchment/70">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
-        <p>© <span id="year"></span> Emirate Coin. All rights reserved.</p>
-        <p class="text-parchment/60">This site does not constitute financial advice. Do your own research.</p>
+    <!-- Use Cases -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold">Utility & Use Cases</h2>
+        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">Travel Loyalty Program</h3>
+            <p class="mt-2 text-parchment/80">
+              Future integrations with flight, hotel, and travel services to
+              redeem EMC for perks and discounts.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">Community Rewards</h3>
+            <p class="mt-2 text-parchment/80">
+              Airdrops and rewards distributed through campaigns, partnerships,
+              and task-based programs (no Telegram airdrops).
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">Vouchers & Gift Cards</h3>
+            <p class="mt-2 text-parchment/80">
+              Access discounted travel vouchers and gift cards via ecosystem
+              partners.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">Governance Voting</h3>
+            <p class="mt-2 text-parchment/80">
+              Vote on treasury use, partnerships, and roadmap decisions in
+              future dApps.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">NFT Boarding Passes</h3>
+            <p class="mt-2 text-parchment/80">
+              Collectible NFT experiences and access tokens planned for later
+              phases.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // === CONSTANTS ===
-    const CONTRACT = '0xD7abd6e3CE9658f7b6E454784FfD31A056223C59';
+    <!-- Roadmap -->
+    <section
+      id="roadmap"
+      class="py-16 bg-maroon-800/60 border-y border-white/10"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold">Roadmap</h2>
+        <div class="mt-8 grid lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <div class="text-xs uppercase tracking-widest text-parchment/60">
+              Phase 1 – Genesis
+            </div>
+            <ul class="mt-3 space-y-2 text-parchment/85">
+              <li>✅ Token deployed on BSC</li>
+              <li>✅ Whitepaper creation</li>
+              <li>✅ Branding foundations</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <div class="text-xs uppercase tracking-widest text-parchment/60">
+              Phase 2 – Expansion
+            </div>
+            <ul class="mt-3 space-y-2 text-parchment/85">
+              <li>Token verification on BscScan</li>
+              <li>Logo, website, and social channels live</li>
+              <li>Begin community rewards (non-Telegram)</li>
+              <li>PancakeSwap liquidity pool</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <div class="text-xs uppercase tracking-widest text-parchment/60">
+              Phase 3 – Utility + Scale
+            </div>
+            <ul class="mt-3 space-y-2 text-parchment/85">
+              <li>Launch “Emirate Travel Vault” loyalty system</li>
+              <li>Travel partnerships & influencer programs</li>
+              <li>NFT airline collectibles</li>
+              <li>Governance enablement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- Buy / Contract CTA -->
+    <section id="buy" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="p-6 md:p-8 rounded-3xl bg-white/5 gold-ring">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+          >
+            <div>
+              <h3 class="text-xl font-bold">Buy Emirate Coin (EMC)</h3>
+              <p class="mt-2 text-parchment/80">
+                Add the contract to your wallet and trade on PancakeSwap once
+                liquidity goes live.
+              </p>
+              <div class="mt-3 text-sm text-parchment/70">
+                Contract: <code class="contract-address"></code>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                id="pcsLink"
+                href="#"
+                class="px-5 py-3 rounded-2xl bg-gold-500 text-maroon-700 font-semibold shadow-glow hover:brightness-110 transition"
+                aria-label="Open PancakeSwap"
+                >Trade on PancakeSwap</a
+              >
+              <a
+                id="bscscanLink"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="px-5 py-3 rounded-2xl border border-gold-500/70 hover:bg-white/5 transition"
+                >View on BscScan</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    <!-- Socials -->
+    <section id="socials" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl font-bold">Join the Community</h2>
+            <p class="mt-3 text-parchment/80 max-w-xl">
+              Follow our official channels for announcements, reward campaigns,
+              and roadmap progress. No Telegram airdrops will be conducted.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="https://x.com/emirate_coin"
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10"
+                >X (Twitter)</a
+              >
+              <a
+                href="https://t.me/emiratecoinofficial"
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10"
+                >Telegram</a
+              >
+              <a
+                href="https://www.tiktok.com/emiratecoin"
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10"
+                >TikTok</a
+              >
+              <a
+                href="https://www.youtube.com/@EmirateCoin"
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-white/5 border border-white/15 hover:bg-white/10"
+                >YouTube</a
+              >
+              <a
+                href="whitepaper.pdf"
+                target="_blank"
+                rel="noopener"
+                class="px-4 py-2 rounded-xl bg-gold-500 text-maroon-700 font-semibold shadow-glow"
+                >Whitepaper</a
+              >
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white/5 gold-ring">
+            <h3 class="font-semibold">Official Details</h3>
+            <dl class="mt-3 grid grid-cols-3 gap-3 text-sm text-parchment/85">
+              <dt class="col-span-1 text-parchment/60">Contract</dt>
+              <dd class="col-span-2 break-all contract-address"></dd>
+              <dt class="col-span-1 text-parchment/60">Network</dt>
+              <dd class="col-span-2">BNB Smart Chain</dd>
+              <dt class="col-span-1 text-parchment/60">Decimals</dt>
+              <dd class="col-span-2">18</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Fill contract address everywhere
-    document.querySelectorAll('.contract-address').forEach(el => el.textContent = CONTRACT);
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-parchment/70"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-3"
+        >
+          <p>© <span id="year"></span> Emirate Coin. All rights reserved.</p>
+          <p class="text-parchment/60">
+            This site does not constitute financial advice. Do your own
+            research.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-    // Links that depend on the contract
-    const bscscanLink = document.getElementById('bscscanLink');
-    if (bscscanLink) bscscanLink.href = `https://bscscan.com/token/${CONTRACT}`;
+    <script>
+      // === CONSTANTS ===
+      const CONTRACT = "0xD7abd6e3CE9658f7b6E454784FfD31A056223C59";
 
-    const pcsLink = document.getElementById('pcsLink');
-    if (pcsLink) pcsLink.href = `https://pancakeswap.finance/swap?outputCurrency=${CONTRACT}`;
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Copy contract button
-    document.getElementById('copyContract')?.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(CONTRACT);
-        const btn = document.getElementById('copyContract');
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.classList.add('bg-white/10');
-        setTimeout(()=>{ btn.textContent = original; btn.classList.remove('bg-white/10'); }, 1400);
-      } catch (e) {
-        alert('Copy failed. Contract: ' + CONTRACT);
-      }
-    });
-  </script>
-</body>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn?.addEventListener("click", () =>
+        mobileMenu.classList.toggle("hidden")
+      );
+
+      // Fill contract address everywhere
+      document
+        .querySelectorAll(".contract-address")
+        .forEach((el) => (el.textContent = CONTRACT));
+
+      // Links that depend on the contract
+      const bscscanLink = document.getElementById("bscscanLink");
+      if (bscscanLink)
+        bscscanLink.href = `https://bscscan.com/token/${CONTRACT}`;
+
+      const pcsLink = document.getElementById("pcsLink");
+      if (pcsLink)
+        pcsLink.href = `https://pancakeswap.finance/swap?outputCurrency=${CONTRACT}`;
+
+      // Copy contract button
+      document
+        .getElementById("copyContract")
+        ?.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(CONTRACT);
+            const btn = document.getElementById("copyContract");
+            const original = btn.textContent;
+            btn.textContent = "Copied!";
+            btn.classList.add("bg-white/10");
+            setTimeout(() => {
+              btn.textContent = original;
+              btn.classList.remove("bg-white/10");
+            }, 1400);
+          } catch (e) {
+            alert("Copy failed. Contract: " + CONTRACT);
+          }
+        });
+    </script>
+  </body>
 </html>
-
-
